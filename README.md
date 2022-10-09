@@ -1,5 +1,7 @@
 # A generalised form of the Transformed Eulerian Mean
 
+[![DOI](https://zenodo.org/badge/548557109.svg)](https://zenodo.org/badge/latestdoi/548557109)
+
 This repository contains the python code to compute generalized TEM diagnostics defined by Greatbatch et al. (2022). In addition the software allows a diagnosis of the standard TEM defined by Andrews et al. (1987) and the modified TEM defined by Held and Schneider (1999).
 
 ## TEM diagnosis from meteorological data
@@ -18,7 +20,6 @@ tem = Generalized(ds['t'],('longitude','time'))
 diffusivity = tem.diffusivity(ds['v'],ds['w'],ds['t'])
 
 diffusivity.plot()
-
 ```
 
 
