@@ -15,13 +15,21 @@ from generalized_TEM import Generalized
 
 ds = xr.open_dataset('era5-pressure-levels.nc')
 
+# Compute generalized TEM (Greatbatch et al., 2022)
 tem = Generalized(ds['t'],('longitude','time'))
 
 diffusivity = tem.diffusivity(ds['v'],ds['w'],ds['t'])
 
 diffusivity.plot()
+
+# compute standard TEM (Andrews et al., 1987)
+tem = Standard(ds['t'],('longitude','time'))
+
+# compute modified TEM (Held & Schneider, 1999)
+tem = Modified(ds['t'],('longitude','time'))
 ```
 
+For more details see the doc strings of the respective classes.
 
 ## References
 
