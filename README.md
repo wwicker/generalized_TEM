@@ -9,19 +9,27 @@ This repository contains the python code to compute generalized TEM diagnostics 
 The generalized TEM is defined for spherical, log-pressure coordinates. Meteorological data (e.g. the ERA5 global reanalsis, Hersbach et al. 2020) is usually given on pressure levels \[hPa\] with latitude-longitude coordinates \[° N\]. The software takes full account for this. NetCDF files can be read using the [xarray](https://docs.xarray.dev/en/stable/) N-D labled arrays and datasets. All diagnostics in SI-units are computed from zonal and meridonal velocity \[m/s\], vertical velocity \[Pa/s\] and in-situ temperature [K] without changing the coordinate variables. A simple python code using this software might look like this.
 
 
-```
+```python
 import xarray as xr 
 from generalized_TEM import Generalized
 
 ds = xr.open_dataset('era5-pressure-levels.nc')
 
+# Compute generalized TEM (Greatbatch et al., 2022)
 tem = Generalized(ds['t'],('longitude','time'))
 
 diffusivity = tem.diffusivity(ds['v'],ds['w'],ds['t'])
 
 diffusivity.plot()
+
+# compute standard TEM (Andrews et al., 1987)
+tem = Standard(ds['t'],('longitude','time'))
+
+# compute modified TEM (Held & Schneider, 1999)
+tem = Modified(ds['t'],('longitude','time'))
 ```
 
+For more details see the doc strings of the respective classes.
 
 ## References
 
