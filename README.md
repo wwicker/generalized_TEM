@@ -1,8 +1,8 @@
 # A generalised form of the Transformed Eulerian Mean
 
-[![DOI](https://zenodo.org/badge/548557109.svg)](https://zenodo.org/badge/latestdoi/548557109)
-
 This repository contains the python code to compute generalized TEM diagnostics defined by Greatbatch et al. (2022). In addition the software allows a diagnosis of the standard TEM defined by Andrews et al. (1987) and the modified TEM defined by Held and Schneider (1999).
+
+The quality of the different TEM in terms of representing the Lagrangian Mean circulation can be assessed by comparsion with the mass-weighted mean circulation from an isentropic average. The required routines to do so are defined exemplary by the IPython notebook ```isentropic_averaging.ipynb```.
 
 ## TEM diagnosis from meteorological data
 
@@ -11,7 +11,7 @@ The generalized TEM is defined for spherical, log-pressure coordinates. Meteorol
 
 ```python
 import xarray as xr 
-from generalized_TEM import Generalized
+from generalized_TEM import Generalized, Standard, Modified
 
 ds = xr.open_dataset('era5-pressure-levels.nc')
 
