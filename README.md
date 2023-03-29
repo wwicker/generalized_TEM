@@ -2,7 +2,7 @@
 
 
 
-[![DOI](https://zenodo.org/badge/7781778.svg)](https://zenodo.org/badge/latestdoi/7781778)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7781778.svg)](https://doi.org/10.5281/zenodo.7781778)
 
 
 This repository contains the python code to compute generalized TEM diagnostics defined by Greatbatch et al. (2022). In addition the software allows a diagnosis of the standard TEM defined by Andrews et al. (1987) and the modified TEM defined by Held and Schneider (1999).
